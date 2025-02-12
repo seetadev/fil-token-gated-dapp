@@ -61,7 +61,7 @@ const Menu: React.FC<{
   };
 
   const fetchUserTokens = async () => {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const provider = new ethers.providers.Web3Provider(window.ethereum as any);
     const signer = provider.getSigner();
     const contract = new ethers.Contract(
       import.meta.env.VITE_MEDI_INVOICE_CONTRACT_ADDRESS,
